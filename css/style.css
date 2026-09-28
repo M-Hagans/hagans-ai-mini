@@ -1,0 +1,285 @@
+/* Harbor Frequency — one-page promo
+   Palette chosen by hand (not the AI scaffold defaults):
+   deep harbor teal, warm paper, amber rope-light, near-black body text.
+   Body text on paper is ~#1b2428 on #f6f1e8 (well above 4.5:1).
+*/
+
+:root {
+  --paper: #f6f1e8;
+  --ink: #1b2428;
+  --ink-muted: #3d4a50;
+  --teal: #0b3d4a;
+  --teal-dark: #072c36;
+  --amber: #9a4e12;
+  --amber-bright: #c0772a;
+  --foam: #e8f2f4;
+  --focus: #0b3d4a;
+  --max: 68rem;
+  --radius: 0.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.5rem 0.85rem;
+  background: var(--teal);
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+a {
+  color: var(--amber);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--teal);
+}
+
+a:focus-visible,
+button:focus-visible,
+audio:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.site-header {
+  background: var(--teal);
+  color: var(--paper);
+}
+
+.site-header a {
+  color: #f6f1e8;
+}
+
+.site-header a:hover {
+  color: #ffd9a8;
+}
+
+.header-inner,
+.wrap {
+  width: min(100% - 2rem, var(--max));
+  margin-inline: auto;
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding: 1rem 0;
+}
+
+.wordmark {
+  font-family: system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  font-size: 0.95rem;
+}
+
+.hero {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+
+.lede {
+  font-size: 1.2rem;
+  color: var(--ink-muted);
+  max-width: 40rem;
+  margin: 0 0 1.25rem;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+  max-height: 28rem;
+}
+
+.caption {
+  margin: 0.5rem 0 0;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+section {
+  padding: 0.5rem 0 2.5rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+  margin: 0 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+}
+
+.player-block {
+  background: var(--foam);
+  border: 1px solid #c5d6db;
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+audio {
+  width: 100%;
+  margin: 0.75rem 0 0.35rem;
+}
+
+/* AI-scaffolded episode row — layout kept, colors/spacing rewritten by hand */
+.episode-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.episode-card {
+  background: #fff;
+  border: 1px solid #d7cdc0;
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem 1.25rem;
+  box-shadow: 0 1px 0 rgba(11, 61, 74, 0.06);
+}
+
+.episode-card .kicker {
+  font-family: system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 0.35rem;
+}
+
+.about p {
+  max-width: 42rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: system-ui, sans-serif;
+  font-weight: 650;
+  background: var(--teal);
+  color: #f6f1e8;
+  text-decoration: none;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+}
+
+.cta:hover {
+  background: var(--teal-dark);
+  color: #fff;
+}
+
+.site-footer {
+  background: var(--teal-dark);
+  color: #e8f2f4;
+  padding: 2rem 0 2.5rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  color: #ffd9a8;
+}
+
+.disclosure {
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid #4a7a86;
+  border-radius: var(--radius);
+  background: #0b3d4a;
+  color: #f6f1e8;
+}
+
+.disclosure h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.disclosure p {
+  margin: 0;
+  max-width: 50rem;
+}
+
+@media (min-width: 720px) {
+  .episode-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .hero-image {
+    max-height: 32rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-inner,
+  .wrap {
+    width: calc(100% - 1.25rem);
+  }
+
+  body {
+    font-size: 1rem;
+  }
+}
